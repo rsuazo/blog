@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blog</title>
+
+  <title>Robert Suazo - Developer!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/d5a73304bc.js" crossorigin="anonymous"></script>
+ 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +14,36 @@
   </head>
 
   <body>
+   <header id="main_navigation" class="clearfix">
+    <%= link_to "Robert Suazo", root_path, class: "name" %>
+    <nav>
+      <%= link_to "Articles", posts_path %>
+      <%= link_to "Projects", projects_path %>
+      <%= link_to "Contact", new_contact_path %>
+      <% if user_signed_in? %>
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+      <% end %>
+
+    </nav>
+
+  </header>
+
+    <% if notice %>
+    <p class="notice"><%= notice %></p>
+    <% elsif alert %>
+    <p class="alert"><%= alert %></p>
+    <% end %>
+
     <%= yield %>
+
+    <footer id="main_footer">
+    <p class="copyright">&copy;2020 Robert Suazo</p>
+    <nav>
+      <a href="https://twitter.com/RobertSuazo6" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://github.com/rsuazo" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/rsuazo2/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </nav>
+  </footer>
+
   </body>
 </html>
