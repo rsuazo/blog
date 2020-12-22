@@ -1,2 +1,4 @@
 class Project < ApplicationRecord
-end
+    extend FriendlyId
+    friendly_id :title, use: :slugged
+  end
