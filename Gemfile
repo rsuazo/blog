@@ -32,6 +32,7 @@ gem 'pygments.rb', '~> 1.2', '>= 1.2.1'
 gem 'redcarpet', '~> 3.5', '>= 3.5.1'
 gem 'friendly_id', '~> 5.4', '>= 5.4.1'
 gem 'will_paginate', '~> 3.3'
+gem 'mail_form', '~> 1.8', '>= 1.8.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
